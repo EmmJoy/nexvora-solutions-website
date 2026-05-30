@@ -12,6 +12,12 @@ import {
   Sparkles,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
+import ClientLogosStrip from "../components/sections/ClientLogosStrip";
+import TrustBar from "../components/sections/TrustBar";
+import WhyChooseUs from "../components/sections/WhyChooseUs";
+import CaseStudiesPreview from "../components/sections/CaseStudiesPreview";
+import TestimonialsSection from "../components/sections/TestimonialsSection";
+import CTABanner from "../components/sections/CTABanner";
 
 const frameworks = [
   {
@@ -62,6 +68,7 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
+        {/* Hero */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-blue-50" />
           <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-indigo-100/40 blur-3xl" />
@@ -86,26 +93,39 @@ export default function HomePage() {
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link href="/services" className="btn-primary w-full px-8 py-3.5 text-base sm:w-auto">
+                <Link
+                  href="/services"
+                  className="btn-primary w-full px-8 py-3.5 text-base sm:w-auto"
+                >
                   Explore Services
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link href="/case-studies" className="btn-secondary w-full px-8 py-3.5 text-base sm:w-auto">
+                <Link
+                  href="/case-studies"
+                  className="btn-secondary w-full px-8 py-3.5 text-base sm:w-auto"
+                >
                   View Case Studies
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="mx-auto mt-20 max-w-5xl">
+        <ClientLogosStrip />
+        <TrustBar />
+        <WhyChooseUs />
+        <CaseStudiesPreview />
+
+        {/* Technical Framework */}
+        <section className="border-t border-slate-200/80 bg-slate-50 py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
               <div className="mb-8 text-center">
                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-                  Technical{" "}
-                  <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
-                    Framework
-                  </span>
+                  Technical <span className="gradient-text">Framework</span>
                 </h2>
                 <p className="mt-2 text-slate-600">
-                  Explore the engineering disciplines powering our enterprise deliveries
+                  The engineering disciplines powering our enterprise deliveries
                 </p>
               </div>
 
@@ -178,6 +198,7 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Stats */}
         <section className="border-t border-slate-200/80 bg-white/70 py-16 backdrop-blur-sm">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
             {[
@@ -191,16 +212,24 @@ export default function HomePage() {
                 className="rounded-2xl border border-slate-200/80 bg-slate-50/50 px-4 py-6 text-center transition-all duration-200 hover:border-indigo-200 hover:bg-indigo-50/30"
               >
                 <p className="text-3xl font-bold gradient-text">{stat.value}</p>
-                <p className="mt-1.5 text-sm font-medium text-slate-600">{stat.label}</p>
+                <p className="mt-1.5 text-sm font-medium text-slate-600">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
         </section>
+
+        <TestimonialsSection />
+        <CTABanner />
       </main>
 
-      {/* <footer className="border-t border-slate-200 bg-slate-900 py-8 text-center text-sm text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.</p>
-      </footer> */}
+      <footer className="border-t border-slate-800 bg-slate-950 py-10 text-center text-sm text-slate-500">
+        <p className="font-medium text-slate-400">Nexvora Solutions</p>
+        <p className="mt-1">
+          &copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
