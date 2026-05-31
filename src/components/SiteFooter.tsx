@@ -78,8 +78,7 @@ export default function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.
-          </p>
+                      </p>
           <p className="text-xs text-slate-500">
             nexvora-solutions.com · Software built with care in Bangladesh
           </p>
