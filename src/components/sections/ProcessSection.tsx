@@ -2,6 +2,7 @@
 
 import { Code2, Lightbulb, Rocket, Search } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 const steps = [
   {
@@ -36,13 +37,12 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="border-t border-slate-200/80 bg-slate-50 py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative border-t border-slate-200/80 bg-slate-50 py-20 sm:py-24">
+      <div className="absolute inset-0 grid-pattern opacity-40" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-            How we work
-          </p>
-          <h2 className="section-heading mt-2">Simple, transparent process</h2>
+          <SectionLabel>How we work</SectionLabel>
+          <h2 className="section-heading mt-4">Simple, transparent process</h2>
           <p className="mt-4 text-slate-600">
             No black boxes. You always know what we&apos;re building, what it costs,
             and when it ships.
@@ -54,8 +54,8 @@ export default function ProcessSection() {
             const Icon = item.icon;
             return (
               <AnimatedSection key={item.step} delay={index * 0.08}>
-                <article className="relative h-full rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm">
-                  <span className="text-xs font-bold tracking-widest text-indigo-500">
+                <article className="card relative h-full p-6">
+                  <span className="text-xs font-bold tracking-widest gradient-text">
                     {item.step}
                   </span>
                   <div className="icon-badge mb-4 mt-3 h-10 w-10">

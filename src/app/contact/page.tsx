@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import SiteFooter from "../../components/SiteFooter";
+import PageHero from "../../components/sections/PageHero";
 
 type FormData = {
   fullName: string;
@@ -116,19 +117,15 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="flex-1">
-        <section className="border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-blue-50 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="section-heading">
-                Contact <span className="gradient-text">Nexvora</span>
-              </h1>
-              <p className="mt-4 text-lg text-slate-600">
-                Tell us about your project. We typically respond within one business
-                day with an honest assessment — no auto-reply fluff.
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          label="Get in touch"
+          title={
+            <>
+              Contact <span className="gradient-text">Nexvora</span>
+            </>
+          }
+          description="Tell us about your project. We typically respond within one business day with an honest assessment — no auto-reply fluff."
+        />
 
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -141,8 +138,8 @@ export default function ContactPage() {
                     </h2>
                     <p className="mt-2 text-slate-600">
                       Whether you&apos;re a startup or a scaling business, our team is
-                      ready to help you build reliable, enterprise-grade software
-                      solutions.
+                      ready to help you build reliable software that fits your budget
+                      and timeline.
                     </p>
                   </div>
 
@@ -169,7 +166,7 @@ export default function ContactPage() {
 
                       return (
                         <li key={item.label} className="flex gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                          <div className="icon-badge h-10 w-10 shrink-0">
                             <Icon className="h-5 w-5" />
                           </div>
                           <div>
@@ -198,8 +195,7 @@ export default function ContactPage() {
                     </h2>
                     <p className="mx-auto mt-3 max-w-md text-slate-600">
                       Thank you, {formData.fullName.split(" ")[0]}. Your inquiry has
-                      been routed to our enterprise solutions team. A senior account
-                      executive will contact you at{" "}
+                      been received by our team. A project lead will contact you at{" "}
                       <span className="font-medium text-slate-900">
                         {formData.corporateEmail}
                       </span>{" "}

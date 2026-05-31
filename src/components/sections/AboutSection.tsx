@@ -2,6 +2,7 @@
 
 import { CheckCircle2, Users } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 const highlights = [
   "Senior engineers on every project — no outsourcing bait-and-switch",
@@ -12,12 +13,14 @@ const highlights = [
 
 export default function AboutSection() {
   return (
-    <section className="border-t border-slate-200/80 bg-white py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative border-t border-slate-200/80 bg-white py-20 sm:py-24">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <AnimatedSection>
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-indigo-50/50 p-8 sm:p-10">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 text-white shadow-lg">
+            <div className="glass-panel relative overflow-hidden p-8 sm:p-10">
+              <div className="glow-orb absolute -right-8 -top-8 h-32 w-32 bg-indigo-400/20" />
+              <div className="icon-badge h-14 w-14">
                 <Users className="h-7 w-7" />
               </div>
               <p className="mt-6 text-3xl font-bold text-slate-900">Est. 2019</p>
@@ -26,11 +29,11 @@ export default function AboutSection() {
                 faceless offshore factory.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-xl border border-slate-200/80 bg-white p-4 text-center">
+                <div className="stat-card">
                   <p className="text-2xl font-bold gradient-text">8–12</p>
                   <p className="mt-1 text-xs font-medium text-slate-600">Team members</p>
                 </div>
-                <div className="rounded-xl border border-slate-200/80 bg-white p-4 text-center">
+                <div className="stat-card">
                   <p className="text-2xl font-bold gradient-text">35+</p>
                   <p className="mt-1 text-xs font-medium text-slate-600">Projects shipped</p>
                 </div>
@@ -39,10 +42,8 @@ export default function AboutSection() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-              Who we are
-            </p>
-            <h2 className="section-heading mt-2">
+            <SectionLabel>Who we are</SectionLabel>
+            <h2 className="section-heading mt-4">
               A studio that ships,{" "}
               <span className="gradient-text">not slides</span>
             </h2>

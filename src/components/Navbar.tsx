@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -27,10 +28,10 @@ function NavLink({
     <Link
       href={href}
       onClick={onNavigate}
-      className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] ${
+      className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
         isActive
-          ? "bg-indigo-50 text-indigo-700 shadow-sm"
-          : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+          ? "bg-indigo-50 text-indigo-700 shadow-sm ring-1 ring-indigo-100"
+          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
       }`}
     >
       {label}
@@ -40,6 +41,7 @@ function NavLink({
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
@@ -48,31 +50,33 @@ export default function Navbar() {
     };
   }, [drawerOpen]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 shadow-sm shadow-slate-900/5 backdrop-blur-xl">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-slate-200/80 bg-white/90 shadow-lg shadow-indigo-500/5 backdrop-blur-xl"
+          : "border-b border-transparent bg-white/60 backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
-        >
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 text-sm font-bold text-white shadow-lg shadow-indigo-500/30 ring-2 ring-indigo-600/10">
-            N
-          </span>
-          <div className="flex flex-col leading-tight">
-            <span className="text-base font-semibold tracking-tight text-slate-900">
-              Nexvora
-            </span>
-            <span className="text-xs font-medium text-slate-500">Solutions</span>
-          </div>
+        <Link href="/" className="group">
+          <Logo size="md" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
-          <Link href="/contact" className="btn-primary ml-3 px-5 py-2">
+          <Link href="/contact" className="btn-primary ml-3 px-5 py-2.5">
             Get Started
           </Link>
         </nav>
@@ -82,7 +86,7 @@ export default function Navbar() {
           aria-label={drawerOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={drawerOpen}
           onClick={() => setDrawerOpen((open) => !open)}
-          className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-700 transition-all duration-200 hover:scale-[1.01] hover:bg-slate-50 active:scale-[0.99] md:hidden"
+          className="inline-flex items-center justify-center rounded-xl border border-slate-200/80 bg-white/80 p-2.5 text-slate-700 backdrop-blur-sm transition-all hover:border-indigo-200 hover:text-indigo-600 md:hidden"
         >
           {drawerOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -91,11 +95,11 @@ export default function Navbar() {
       {drawerOpen && (
         <>
           <div
-            className="fixed inset-0 top-[73px] z-40 bg-slate-900/30 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 top-[73px] z-40 bg-slate-900/40 backdrop-blur-sm md:hidden"
             onClick={closeDrawer}
             aria-hidden="true"
           />
-          <nav className="fixed left-0 right-0 top-[73px] z-50 border-b border-slate-200 bg-white px-4 py-6 shadow-xl md:hidden">
+          <nav className="fixed left-0 right-0 top-[73px] z-50 border-b border-slate-200 bg-white/95 px-4 py-6 shadow-2xl backdrop-blur-xl md:hidden">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <NavLink

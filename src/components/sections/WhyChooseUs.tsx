@@ -2,6 +2,7 @@
 
 import { Headphones, MessageSquare, Shield, Zap } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 const differentiators = [
   {
@@ -32,13 +33,12 @@ const differentiators = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-slate-50 py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-slate-50 py-20 sm:py-24">
+      <div className="absolute inset-0 grid-pattern opacity-40" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-            Why Nexvora
-          </p>
-          <h2 className="section-heading mt-2">
+          <SectionLabel>Why Nexvora</SectionLabel>
+          <h2 className="section-heading mt-4">
             Why teams choose <span className="gradient-text">Nexvora</span>
           </h2>
           <p className="mt-4 text-slate-600">

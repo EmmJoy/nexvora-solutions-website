@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import SiteFooter from "../../components/SiteFooter";
+import PageHero from "../../components/sections/PageHero";
 
 export const metadata = {
   title: "Services",
@@ -57,19 +58,15 @@ export default function ServicesPage() {
       <Navbar />
 
       <main className="flex-1">
-        <section className="border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-blue-50 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="section-heading">
-                Our <span className="gradient-text">Services</span>
-              </h1>
-              <p className="mt-4 text-lg text-slate-600">
-                Practical software services for startups and growing businesses.
-                Fixed quotes, clear timelines, no jargon-filled proposals.
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          label="What we do"
+          title={
+            <>
+              Our <span className="gradient-text">Services</span>
+            </>
+          }
+          description="Practical software services for startups and growing businesses. Fixed quotes, clear timelines, no jargon-filled proposals."
+        />
 
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -106,7 +103,9 @@ export default function ServicesPage() {
               })}
             </div>
 
-            <div className="mt-16 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center shadow-2xl sm:p-12">
+            <div className="relative mt-16 overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-8 text-center shadow-2xl sm:p-12">
+              <div className="glow-orb absolute -right-16 -top-16 h-48 w-48 bg-indigo-500/20" />
+              <div className="relative z-10">
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Not sure which service you need?
               </h2>
@@ -118,6 +117,7 @@ export default function ServicesPage() {
                 Book a Free Call
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              </div>
             </div>
           </div>
         </section>

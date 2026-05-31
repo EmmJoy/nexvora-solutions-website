@@ -3,18 +3,25 @@
 import Link from "next/link";
 import { ArrowRight, Calendar, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 export default function CTABanner() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-24">
+    <section className="relative overflow-hidden py-20 sm:py-28">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
-      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-indigo-600/20 blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-600/15 blur-3xl" />
+      <div className="absolute inset-0 grid-pattern opacity-[0.07]" />
+      <div className="glow-orb absolute -right-24 -top-24 h-72 w-72 bg-indigo-500/25" />
+      <div
+        className="glow-orb absolute -bottom-24 -left-24 h-72 w-72 bg-violet-500/20"
+        style={{ animationDelay: "-5s" }}
+      />
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to build something remarkable?
+          <SectionLabel dark>Let&apos;s talk</SectionLabel>
+          <h2 className="mt-6 text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Ready to build something{" "}
+            <span className="gradient-text-animated">remarkable?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-balance text-base text-slate-300 sm:text-lg">
             Book a free 30-minute discovery call. We&apos;ll listen to your idea,
@@ -32,7 +39,7 @@ export default function CTABanner() {
             </Link>
             <Link
               href="/case-studies"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-500/60 bg-slate-800/60 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:scale-[1.01] hover:border-slate-400 hover:bg-slate-800 active:scale-[0.99] sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-500/60 bg-slate-800/60 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-400/50 hover:bg-slate-800 sm:w-auto"
             >
               View Our Work
               <ArrowRight className="h-4 w-4" />

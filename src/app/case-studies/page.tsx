@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import SiteFooter from "../../components/SiteFooter";
+import PageHero from "../../components/sections/PageHero";
 
 export const metadata = {
   title: "Case Studies",
@@ -90,20 +91,15 @@ export default function CaseStudiesPage() {
       <Navbar />
 
       <main className="flex-1">
-        <section className="border-b border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-blue-50 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="section-heading">
-                Case <span className="gradient-text">Studies</span>
-              </h1>
-              <p className="mt-4 text-lg text-slate-600">
-                Real projects with real outcomes. Some client names are withheld
-                by request — we&apos;re happy to share references during a discovery
-                call.
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          label="Portfolio"
+          title={
+            <>
+              Case <span className="gradient-text">Studies</span>
+            </>
+          }
+          description="Real projects with real outcomes. Some client names are withheld by request — we're happy to share references during a discovery call."
+        />
 
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-6 lg:px-8">
@@ -182,7 +178,9 @@ export default function CaseStudiesPage() {
               );
             })}
 
-            <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center shadow-2xl sm:p-12">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-8 text-center shadow-2xl sm:p-12">
+              <div className="glow-orb absolute -left-16 -bottom-16 h-48 w-48 bg-violet-500/20" />
+              <div className="relative z-10">
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
                 Want results like these?
               </h2>
@@ -194,6 +192,7 @@ export default function CaseStudiesPage() {
                 Start a Conversation
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              </div>
             </div>
           </div>
         </section>

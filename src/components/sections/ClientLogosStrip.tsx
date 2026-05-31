@@ -9,6 +9,7 @@ import {
   Truck,
 } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 const industries = [
   { label: "FinTech & Banking", icon: Building2 },
@@ -27,9 +28,9 @@ function IndustryBadge({
   icon: typeof Building2;
 }) {
   return (
-    <div className="flex shrink-0 items-center gap-3 rounded-xl border border-slate-200/80 bg-slate-50 px-5 py-3">
-      <Icon className="h-5 w-5 text-slate-400" strokeWidth={1.5} />
-      <span className="whitespace-nowrap text-sm font-medium text-slate-600">
+    <div className="flex shrink-0 items-center gap-3 rounded-xl border border-slate-200/60 bg-white/80 px-5 py-3 shadow-sm backdrop-blur-sm transition-all hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-500/10">
+      <Icon className="h-5 w-5 text-indigo-500" strokeWidth={1.5} />
+      <span className="whitespace-nowrap text-sm font-medium text-slate-700">
         {label}
       </span>
     </div>
@@ -43,10 +44,8 @@ export default function ClientLogosStrip() {
     <section className="border-y border-slate-200/80 bg-white py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-            Industries
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
+          <SectionLabel>Industries</SectionLabel>
+          <h2 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">
             Sectors we work in
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-600">

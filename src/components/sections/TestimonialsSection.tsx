@@ -2,6 +2,7 @@
 
 import { Quote } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import SectionLabel from "./SectionLabel";
 
 const testimonials = [
   {
@@ -32,13 +33,14 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-slate-900 py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-slate-950 py-20 sm:py-24">
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/40 via-transparent to-slate-950" />
+      <div className="glow-orb absolute left-1/2 top-0 h-64 w-96 -translate-x-1/2 bg-indigo-500/15" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-400">
-            Client feedback
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <SectionLabel dark>Client feedback</SectionLabel>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             What clients tell us
           </h2>
           <p className="mt-4 text-sm text-slate-500">
@@ -49,13 +51,13 @@ export default function TestimonialsSection() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {testimonials.map((item, index) => (
             <AnimatedSection key={item.name} delay={index * 0.1}>
-              <article className="flex h-full flex-col rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6 shadow-lg shadow-black/20 sm:p-8">
-                <Quote className="h-7 w-7 text-indigo-500/50" aria-hidden="true" />
+              <article className="flex h-full flex-col rounded-2xl border border-slate-700/50 bg-slate-800/40 p-6 backdrop-blur-sm transition-all hover:border-indigo-500/30 hover:bg-slate-800/60 sm:p-8">
+                <Quote className="h-7 w-7 text-indigo-400/60" aria-hidden="true" />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-300 sm:text-base">
                   &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-3 border-t border-slate-700/60 pt-6">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-600/20 text-sm font-semibold text-indigo-300">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30">
                     {item.initials}
                   </div>
                   <div>

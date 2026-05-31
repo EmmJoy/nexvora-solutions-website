@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Logo from "./Logo";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -9,17 +10,15 @@ const footerLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-slate-400">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-slate-800 bg-slate-950 text-slate-400">
+      <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/30 via-transparent to-transparent" />
+      <div className="glow-orb absolute bottom-0 left-1/4 h-48 w-48 bg-indigo-600/10" />
+
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-blue-600 text-sm font-bold text-white">
-                N
-              </span>
-              <span className="text-base font-semibold text-white">
-                Nexvora Solutions
-              </span>
+            <Link href="/" className="group">
+              <Logo variant="dark" size="md" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               A software engineering studio helping startups and businesses build
@@ -36,7 +35,7 @@ export default function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-indigo-300"
                   >
                     {link.label}
                   </Link>
