@@ -6,21 +6,21 @@ import AnimatedSection from "./AnimatedSection";
 
 const caseStudies = [
   {
-    title: "Field Force Asset Tracking",
-    industry: "Logistics & Telecom",
-    outcome: "Reduced field reporting time by 67% across 2,400 agents",
+    title: "Inventory Dashboard",
+    industry: "Retail",
+    outcome: "Cut manual stock updates by 40% for a 12-store retail chain",
     href: "/case-studies",
   },
   {
-    title: "Mobile Banking Platform",
+    title: "Customer Web Portal",
     industry: "FinTech",
-    outcome: "Reduced load time by 60% and achieved 99.97% uptime",
+    outcome: "Reduced page load time by 60% for a growing payments startup",
     href: "/case-studies",
   },
   {
-    title: "Warehouse Orchestration System",
-    industry: "Supply Chain",
-    outcome: "Increased order processing speed by 41% across 12 centers",
+    title: "Field Reporting App",
+    industry: "Logistics",
+    outcome: "Replaced paper forms — field team saves ~3 hours per week",
     href: "/case-studies",
   },
 ];
@@ -32,12 +32,12 @@ export default function CaseStudiesPreview() {
         <AnimatedSection className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-indigo-600">
-              Proven Results
+              Selected work
             </p>
-            <h2 className="section-heading mt-2">Case studies</h2>
+            <h2 className="section-heading mt-2">Recent projects</h2>
             <p className="mt-3 max-w-xl text-slate-600">
-              Real deployments for banks, manufacturers, and telecom leaders —
-              measured by outcomes, not promises.
+              A sample of what we&apos;ve shipped. Client names withheld where
+              requested — full details available on request.
             </p>
           </div>
           <Link

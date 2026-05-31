@@ -1,48 +1,34 @@
 "use client";
 
-import { Quote, Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const testimonials = [
   {
     quote:
-      "Nexvora rebuilt our customer-facing platform in record time. Their team understood our telecom-scale requirements and delivered a system that handles millions of daily transactions flawlessly.",
-    name: "Karim Hassan",
-    title: "VP of Digital Engineering",
-    company: "Robi Axiata Ltd.",
-    rating: 5,
+      "We needed an MVP in six weeks for investor demos. Nexvora delivered a working product on time, and they explained every technical decision in plain language.",
+    name: "Arif K.",
+    title: "Co-founder",
+    company: "B2B SaaS startup",
+    initials: "AK",
   },
   {
     quote:
-      "From core banking integration to regulatory compliance, Nexvora handled every complexity. Our digital channels launched on schedule with zero critical incidents in the first quarter.",
-    name: "Farhana Rahman",
-    title: "Chief Technology Officer",
-    company: "Pubali Bank PLC",
-    rating: 5,
+      "Our old website was slow and hard to update. They rebuilt it in Next.js, cut load times noticeably, and trained our team to manage content ourselves.",
+    name: "Sarah M.",
+    title: "Marketing Director",
+    company: "E-commerce brand",
+    initials: "SM",
   },
   {
     quote:
-      "We needed a partner who could scale across our manufacturing divisions nationwide. Nexvora's dedicated squad felt like an extension of our own engineering team.",
-    name: "Rashid Ahmed",
-    title: "Director of IT",
-    company: "Gazi Group",
-    rating: 5,
+      "Honest communication throughout — when a feature would blow the budget, they told us upfront and suggested a simpler alternative. That kind of integrity is rare.",
+    name: "Imran H.",
+    title: "Operations Manager",
+    company: "Logistics company",
+    initials: "IH",
   },
 ];
-
-function StarRating({ count }: { count: number }) {
-  return (
-    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
-      {Array.from({ length: count }).map((_, i) => (
-        <Star
-          key={i}
-          className="h-4 w-4 fill-amber-400 text-amber-400"
-          aria-hidden="true"
-        />
-      ))}
-    </div>
-  );
-}
 
 export default function TestimonialsSection() {
   return (
@@ -50,13 +36,13 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-indigo-400">
-            Client Voices
+            Client feedback
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            What our clients say
+            What clients tell us
           </h2>
-          <p className="mt-4 text-slate-400">
-            Trusted by enterprise leaders across Bangladesh and international markets
+          <p className="mt-4 text-sm text-slate-500">
+            Names shortened for privacy · Real feedback from recent projects
           </p>
         </AnimatedSection>
 
@@ -64,17 +50,20 @@ export default function TestimonialsSection() {
           {testimonials.map((item, index) => (
             <AnimatedSection key={item.name} delay={index * 0.1}>
               <article className="flex h-full flex-col rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6 shadow-lg shadow-black/20 sm:p-8">
-                <Quote className="h-8 w-8 text-indigo-500/60" aria-hidden="true" />
+                <Quote className="h-7 w-7 text-indigo-500/50" aria-hidden="true" />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-300 sm:text-base">
                   &ldquo;{item.quote}&rdquo;
                 </p>
-                <div className="mt-6 border-t border-slate-700/60 pt-6">
-                  <StarRating count={item.rating} />
-                  <p className="mt-3 font-semibold text-white">{item.name}</p>
-                  <p className="text-sm text-slate-400">{item.title}</p>
-                  <p className="text-sm font-medium text-indigo-400">
-                    {item.company}
-                  </p>
+                <div className="mt-6 flex items-center gap-3 border-t border-slate-700/60 pt-6">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-600/20 text-sm font-semibold text-indigo-300">
+                    {item.initials}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">{item.name}</p>
+                    <p className="text-sm text-slate-400">
+                      {item.title}, {item.company}
+                    </p>
+                  </div>
                 </div>
               </article>
             </AnimatedSection>

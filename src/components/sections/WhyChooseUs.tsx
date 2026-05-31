@@ -1,32 +1,32 @@
 "use client";
 
-import { Headphones, Rocket, Shield, TrendingUp } from "lucide-react";
+import { Headphones, MessageSquare, Shield, Zap } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const differentiators = [
   {
-    icon: Rocket,
+    icon: Zap,
     title: "Speed of Delivery",
     description:
-      "Agile engineering squads ship production-ready MVPs in weeks, not months — with sprint cadences and transparent milestones that keep enterprise stakeholders aligned.",
+      "Most MVPs ship in 6–10 weeks. We scope tightly, cut unnecessary features early, and demo working software every two weeks — not wireframes.",
   },
   {
     icon: Shield,
     title: "Enterprise Security",
     description:
-      "Bank-grade encryption, OWASP compliance, and audit-ready architecture designed for regulated industries including finance, healthcare, and telecom.",
+      "HTTPS everywhere, secure auth patterns, input validation, and regular dependency updates. We build with security in mind from day one, not as an afterthought.",
   },
   {
     icon: Headphones,
     title: "Dedicated Support",
     description:
-      "Named account managers, on-call senior engineers, and 24/7 incident response — so your mission-critical systems never wait for help.",
+      "You get a direct Slack or WhatsApp line to your project lead. Bugs after launch? We respond within one business day and fix critical issues fast.",
   },
   {
-    icon: TrendingUp,
+    icon: MessageSquare,
     title: "Proven Scalability",
     description:
-      "From thousands to millions of users — our platforms power mobile banking, supply chain systems, and global field operations without breaking stride.",
+      "We choose architectures that grow with you — from a few hundred users to tens of thousands — without requiring a full rewrite when you scale.",
   },
 ];
 
@@ -39,11 +39,11 @@ export default function WhyChooseUs() {
             Why Nexvora
           </p>
           <h2 className="section-heading mt-2">
-            Why choose <span className="gradient-text">Nexvora</span>
+            Why teams choose <span className="gradient-text">Nexvora</span>
           </h2>
           <p className="mt-4 text-slate-600">
-            Global engineering standards, enterprise rigor, and a track record trusted
-            by organizations across Bangladesh and beyond.
+            We&apos;re not the biggest agency — and that&apos;s intentional. You get
+            senior attention, clear communication, and software that works.
           </p>
         </AnimatedSection>
 

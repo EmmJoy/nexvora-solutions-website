@@ -12,6 +12,7 @@ import {
   User,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import SiteFooter from "../../components/SiteFooter";
 
 type FormData = {
   fullName: string;
@@ -45,13 +46,9 @@ function validateForm(data: FormData): FormErrors {
   }
 
   if (!data.corporateEmail.trim()) {
-    errors.corporateEmail = "Corporate email is required";
+    errors.corporateEmail = "Work email is required";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.corporateEmail)) {
     errors.corporateEmail = "Please enter a valid email address";
-  } else if (
-    /@(gmail|yahoo|hotmail|outlook|icloud|aol)\./i.test(data.corporateEmail)
-  ) {
-    errors.corporateEmail = "Please use your corporate email address";
   }
 
   if (!data.company.trim()) {
@@ -126,8 +123,8 @@ export default function ContactPage() {
                 Contact <span className="gradient-text">Nexvora</span>
               </h1>
               <p className="mt-4 text-lg text-slate-600">
-                Submit your project brief and our solutions team will respond within
-                one business day with a tailored engagement proposal.
+                Tell us about your project. We typically respond within one business
+                day with an honest assessment — no auto-reply fluff.
               </p>
             </div>
           </div>
@@ -140,11 +137,12 @@ export default function ContactPage() {
                 <div className="sticky top-28 space-y-8">
                   <div>
                     <h2 className="text-xl font-bold text-slate-900">
-                      Enterprise Inquiries
+                      Get in touch
                     </h2>
                     <p className="mt-2 text-slate-600">
-                      Our account executives specialize in complex, multi-stakeholder
-                      engagements for organizations with 500+ employees.
+                      Whether you&apos;re a startup or a scaling business, our team is
+                      ready to help you build reliable, enterprise-grade software
+                      solutions.
                     </p>
                   </div>
 
@@ -153,17 +151,18 @@ export default function ContactPage() {
                       {
                         icon: Mail,
                         label: "Email",
-                        value: "nexvora.solutions@gmail.com",
+                        value: "contact@nexvora-solutions.com",
                       },
                       {
                         icon: Phone,
                         label: "Phone",
-                        value: "(+880) 2-5550199",
+                        value: "+880 2-555-0199",
                       },
                       {
                         icon: Building2,
-                        label: "Headquarters",
-                        value: "Banani H 113 , R 3 , Block F ,Dhaka 1213",
+                        label: "Office",
+                        value:
+                          "House 113, Road 3, Block F, Banani, Dhaka 1213, Bangladesh",
                       },
                     ].map((item) => {
                       const Icon = item.icon;
@@ -280,7 +279,7 @@ export default function ContactPage() {
                           htmlFor="corporateEmail"
                           className="mb-1.5 block text-sm font-medium text-slate-700"
                         >
-                          Corporate Email *
+                          Work Email *
                         </label>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
@@ -296,9 +295,12 @@ export default function ContactPage() {
                                 ? "border-red-300 focus:border-red-400"
                                 : "border-slate-300 focus:border-indigo-400"
                             }`}
-                            placeholder="jane.smith@company.com"
+                            placeholder="you@company.com"
                           />
                         </div>
+                        <p className="mt-1 text-xs text-slate-400">
+                          Any valid email works — we reply to the address you provide
+                        </p>
                         {errors.corporateEmail && (
                           <p className="mt-1 text-xs text-red-600">
                             {errors.corporateEmail}
@@ -372,7 +374,7 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={(e) => handleChange("phone", e.target.value)}
                             className="w-full rounded-lg border border-slate-300 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 transition-colors focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
-                            placeholder="+1 (555) 000-0000"
+                            placeholder="+880 2-555-0199"
                           />
                         </div>
                       </div>
@@ -391,10 +393,11 @@ export default function ContactPage() {
                           className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 transition-colors focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                         >
                           <option value="">Select range</option>
-                          <option value="100k-250k">$100K – $250K</option>
-                          <option value="250k-500k">$250K – $500K</option>
-                          <option value="500k-1m">$500K – $1M</option>
-                          <option value="1m+">$1M+</option>
+                          <option value="under-5k">Under $5,000</option>
+                          <option value="5k-15k">$5,000 – $15,000</option>
+                          <option value="15k-50k">$15,000 – $50,000</option>
+                          <option value="50k-100k">$50,000 – $100,000</option>
+                          <option value="100k-plus">$100,000+</option>
                         </select>
                       </div>
 
@@ -481,9 +484,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      {/* <footer className="border-t border-slate-200 bg-slate-900 py-8 text-center text-sm text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.</p>
-      </footer> */}
+      <SiteFooter />
     </div>
   );
 }

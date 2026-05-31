@@ -6,16 +6,22 @@ import { useState } from "react";
 import {
   ArrowRight,
   BarChart3,
+  CheckCircle2,
+  Clock,
   Cloud,
   Layers,
+  Mail,
+  MapPin,
   Shield,
-  Sparkles,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
+import SiteFooter from "../components/SiteFooter";
 import ClientLogosStrip from "../components/sections/ClientLogosStrip";
 import TrustBar from "../components/sections/TrustBar";
+import AboutSection from "../components/sections/AboutSection";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
 import CaseStudiesPreview from "../components/sections/CaseStudiesPreview";
+import ProcessSection from "../components/sections/ProcessSection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import CTABanner from "../components/sections/CTABanner";
 
@@ -24,38 +30,45 @@ const frameworks = [
     id: "cloud",
     label: "Cloud Native",
     icon: Cloud,
-    headline: "Scalable cloud infrastructure built for enterprise resilience",
+    headline: "Reliable hosting and deployment pipelines",
     description:
-      "We architect multi-region deployments on AWS, Azure, and GCP with auto-scaling, zero-downtime releases, and infrastructure-as-code pipelines that meet SOC 2 and ISO 27001 standards.",
-    stack: ["Kubernetes", "Terraform", "Docker", "AWS Lambda", "CloudFront"],
+      "We deploy on AWS, Vercel, and DigitalOcean with automated CI/CD, staging environments, and monitoring — so releases are predictable and rollbacks are easy.",
+    stack: ["AWS", "Vercel", "Docker", "GitHub Actions", "CloudFront"],
   },
   {
     id: "frontend",
     label: "Modern Frontend",
     icon: Layers,
-    headline: "Pixel-perfect interfaces engineered for performance at scale",
+    headline: "Fast, accessible interfaces your users will enjoy",
     description:
-      "Our frontend teams deliver accessible, responsive applications using React, Next.js, and TypeScript — optimized for Core Web Vitals, internationalization, and seamless design-system integration.",
-    stack: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "React, Next.js, and TypeScript with responsive layouts, accessibility basics, and performance tuned for real devices — not just Lighthouse scores.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
     id: "data",
     label: "Data & Analytics",
     icon: BarChart3,
-    headline: "Real-time intelligence that drives executive decision-making",
+    headline: "Dashboards and data that inform decisions",
     description:
-      "From event-driven pipelines to executive dashboards, we transform operational data into actionable insights with sub-second query performance and governed access controls.",
-    stack: ["PostgreSQL", "Redis", "Apache Kafka", "dbt", "Metabase"],
+      "PostgreSQL, Redis, and practical analytics integrations — built for the reporting you actually need, not over-engineered data lakes.",
+    stack: ["PostgreSQL", "Redis", "Prisma", "REST APIs", "Chart.js"],
   },
   {
     id: "security",
     label: "Security First",
     icon: Shield,
-    headline: "Defense-in-depth architecture for regulated industries",
+    headline: "Security built in from the start",
     description:
-      "Every system we build incorporates OWASP best practices, end-to-end encryption, role-based access control, and comprehensive audit logging — designed for finance, healthcare, and government sectors.",
-    stack: ["OAuth 2.0", "SAML SSO", "Vault", "WAF", "Penetration Testing"],
+      "Secure authentication, encrypted connections, role-based access, and input validation — following OWASP guidelines without unnecessary complexity.",
+    stack: ["NextAuth", "JWT", "HTTPS", "RBAC", "Rate limiting"],
   },
+];
+
+const trustSignals = [
+  { icon: CheckCircle2, text: "Free discovery call" },
+  { icon: Clock, text: "Reply within 1 business day" },
+  { icon: MapPin, text: "Banani, Dhaka · Remote-friendly" },
+  { icon: Mail, text: "contact@nexvora-solutions.com" },
 ];
 
 export default function HomePage() {
@@ -77,35 +90,46 @@ export default function HomePage() {
           <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-32">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/80 px-4 py-1.5 text-sm font-medium text-indigo-700 shadow-sm backdrop-blur-sm">
-                <Sparkles className="h-4 w-4" />
-                Enterprise Software Agency
+                Software studio · Est. 2019 · Dhaka, Bangladesh
               </div>
 
               <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.1]">
-                Build mission-critical systems with{" "}
-                <span className="gradient-text">Nexvora Solutions</span>
+                Software your business can{" "}
+                <span className="gradient-text">actually rely on</span>
               </h1>
 
               <p className="mt-6 text-balance text-lg leading-relaxed text-slate-600 sm:text-xl">
-                We partner with Fortune 500 enterprises and high-growth organizations to
-                design, engineer, and deploy software platforms that scale globally —
-                from field operations to executive command centers.
+                We help startups and growing businesses design, build, and scale
+                software products — with the quality and reliability of an
+                enterprise engineering team.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/services"
+                  href="/contact"
                   className="btn-primary w-full px-8 py-3.5 text-base sm:w-auto"
                 >
-                  Explore Services
+                  Book a Free Call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/case-studies"
                   className="btn-secondary w-full px-8 py-3.5 text-base sm:w-auto"
                 >
-                  View Case Studies
+                  See Our Work
                 </Link>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                {trustSignals.map(({ icon: Icon, text }) => (
+                  <span
+                    key={text}
+                    className="inline-flex items-center gap-1.5 text-sm text-slate-500"
+                  >
+                    <Icon className="h-4 w-4 text-indigo-500" />
+                    {text}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -113,19 +137,21 @@ export default function HomePage() {
 
         <ClientLogosStrip />
         <TrustBar />
+        <AboutSection />
         <WhyChooseUs />
         <CaseStudiesPreview />
+        <ProcessSection />
 
-        {/* Technical Framework */}
+        {/* Technical Stack */}
         <section className="border-t border-slate-200/80 bg-slate-50 py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-5xl">
               <div className="mb-8 text-center">
                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
-                  Technical <span className="gradient-text">Framework</span>
+                  Our <span className="gradient-text">tech stack</span>
                 </h2>
                 <p className="mt-2 text-slate-600">
-                  The engineering disciplines powering our enterprise deliveries
+                  Modern, proven tools — chosen for maintainability, not hype
                 </p>
               </div>
 
@@ -202,10 +228,10 @@ export default function HomePage() {
         <section className="border-t border-slate-200/80 bg-white/70 py-16 backdrop-blur-sm">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
             {[
-              { value: "150+", label: "Enterprise Deployments" },
-              { value: "99.9%", label: "Uptime SLA Average" },
-              { value: "40+", label: "Fortune 500 Clients" },
-              { value: "12", label: "Global Delivery Hubs" },
+              { value: "35+", label: "Projects Delivered" },
+              { value: "20+", label: "Clients Served" },
+              { value: "5+", label: "Years in Business" },
+              { value: "12+", label: "Technologies Used" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -224,12 +250,7 @@ export default function HomePage() {
         <CTABanner />
       </main>
 
-      <footer className="border-t border-slate-800 bg-slate-950 py-10 text-center text-sm text-slate-500">
-        <p className="font-medium text-slate-400">Nexvora Solutions</p>
-        <p className="mt-1">
-          &copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

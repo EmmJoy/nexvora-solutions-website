@@ -1,13 +1,13 @@
 "use client";
 
-import { Clock, Globe, Lock, ShieldCheck } from "lucide-react";
+import { Clock, Code2, Globe, ShieldCheck } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const trustItems = [
-  { icon: ShieldCheck, label: "ISO 27001 Certified" },
-  { icon: Lock, label: "SOC 2 Compliant" },
-  { icon: Globe, label: "GDPR Ready" },
-  { icon: Clock, label: "24/7 Support" },
+  { icon: ShieldCheck, label: "Secure by Design" },
+  { icon: Globe, label: "GDPR Aware Development" },
+  { icon: Code2, label: "Clean Code Standards" },
+  { icon: Clock, label: "24/7 Client Support" },
 ];
 
 export default function TrustBar() {

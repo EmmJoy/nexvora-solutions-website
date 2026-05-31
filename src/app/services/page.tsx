@@ -6,46 +6,47 @@ import {
   Palette,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import SiteFooter from "../../components/SiteFooter";
 
 export const metadata = {
   title: "Services",
   description:
-    "Enterprise software engineering and premium UI/UX design services from Nexvora Solutions.",
+    "Web development, UI/UX design, and custom software services from Nexvora Solutions — based in Dhaka, serving clients worldwide.",
 };
 
 const services = [
   {
     icon: Code2,
-    title: "Enterprise Software Engineering",
-    tagline: "Mission-critical platforms built to scale globally",
+    title: "Custom Software Development",
+    tagline: "Web apps, dashboards, and internal tools",
     description:
-      "Our engineering teams deliver robust, maintainable software systems for organizations that cannot afford downtime. From microservices architecture to legacy modernization, we handle the full software lifecycle with enterprise-grade rigor.",
+      "We build production-ready software with clean code and clear documentation. From MVPs for startups to internal tools for established businesses — scoped honestly, delivered on time.",
     features: [
-      "Custom ERP, CRM, and operational workflow platforms",
-      "Microservices and event-driven architecture design",
-      "Legacy system modernization and cloud migration",
-      "API design, integration, and third-party connectivity",
-      "Automated CI/CD pipelines with blue-green deployments",
-      "Performance optimization and load testing at scale",
-      "24/7 monitoring, incident response, and SLA management",
-      "Dedicated engineering pods with senior architects",
+      "Web applications with React & Next.js",
+      "Admin dashboards and internal tools",
+      "REST API design and third-party integrations",
+      "Database design (PostgreSQL, MongoDB)",
+      "Automated testing and CI/CD setup",
+      "Performance optimization and bug fixes",
+      "Post-launch support and maintenance plans",
+      "Full source code and documentation handover",
     ],
   },
   {
     icon: Palette,
-    title: "Premium UI/UX Design & Prototyping",
-    tagline: "Executive-grade experiences that convert and retain",
+    title: "UI/UX Design & Prototyping",
+    tagline: "Interfaces people actually enjoy using",
     description:
-      "We craft design systems and user experiences that reflect your brand's authority while maximizing usability across web, mobile, and embedded platforms. Every pixel is validated through research, prototyping, and usability testing.",
+      "We design responsive, accessible interfaces in Figma before writing code — so you approve the look and flow early, and there are no expensive surprises later.",
     features: [
-      "Enterprise design system creation and governance",
-      "High-fidelity interactive prototypes in Figma",
-      "User research, journey mapping, and persona development",
-      "Accessibility compliance (WCAG 2.1 AA) by default",
-      "Responsive and adaptive layouts for all device classes",
-      "Executive dashboard and data visualization design",
-      "Design-to-development handoff with component specs",
-      "A/B testing frameworks and conversion optimization",
+      "Wireframes and interactive Figma prototypes",
+      "Responsive design for mobile, tablet, and desktop",
+      "Design systems and reusable component libraries",
+      "User flow mapping and usability review",
+      "Accessibility best practices (WCAG basics)",
+      "Landing pages and marketing site design",
+      "Design-to-development handoff with specs",
+      "Iterative revisions based on your feedback",
     ],
   },
 ];
@@ -63,8 +64,8 @@ export default function ServicesPage() {
                 Our <span className="gradient-text">Services</span>
               </h1>
               <p className="mt-4 text-lg text-slate-600">
-                Comprehensive digital capabilities designed for enterprise complexity,
-                regulatory requirements, and long-term strategic value.
+                Practical software services for startups and growing businesses.
+                Fixed quotes, clear timelines, no jargon-filled proposals.
               </p>
             </div>
           </div>
@@ -107,14 +108,14 @@ export default function ServicesPage() {
 
             <div className="mt-16 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center shadow-2xl sm:p-12">
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
-                Ready to accelerate your digital roadmap?
+                Not sure which service you need?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-slate-400">
-                Schedule a consultation with our solutions architects to discuss your
-                enterprise requirements and delivery timeline.
+                Book a free 30-minute call. We&apos;ll help you figure out the right
+                approach and send a written quote — no commitment required.
               </p>
               <Link href="/contact" className="btn-primary mt-8 px-8 py-3.5 text-base">
-                Request a Consultation
+                Book a Free Call
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -122,9 +123,7 @@ export default function ServicesPage() {
         </section>
       </main>
 
-      {/* <footer className="border-t border-slate-200 bg-slate-900 py-8 text-center text-sm text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.</p>
-      </footer> */}
+      <SiteFooter />
     </div>
   );
 }

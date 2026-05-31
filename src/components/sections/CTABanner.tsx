@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, Mail } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 export default function CTABanner() {
@@ -17,9 +17,9 @@ export default function CTABanner() {
             Ready to build something remarkable?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-balance text-base text-slate-300 sm:text-lg">
-            Partner with Nexvora Solutions to design, engineer, and deploy
-            enterprise-grade software — trusted by industry leaders in Bangladesh
-            and around the world.
+            Book a free 30-minute discovery call. We&apos;ll listen to your idea,
+            give honest feedback, and send a written proposal if we&apos;re a good fit
+            — no obligation.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -38,6 +38,14 @@ export default function CTABanner() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+
+          <a
+            href="mailto:contact@nexvora-solutions.com"
+            className="mt-6 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
+          >
+            <Mail className="h-4 w-4" />
+            contact@nexvora-solutions.com
+          </a>
         </AnimatedSection>
       </div>
     </section>

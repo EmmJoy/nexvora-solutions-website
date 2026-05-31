@@ -2,83 +2,84 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  MapPin,
-  Package,
-  Truck,
+  Code2,
+  Layout,
+  Smartphone,
 } from "lucide-react";
 import Navbar from "../../components/Navbar";
+import SiteFooter from "../../components/SiteFooter";
 
 export const metadata = {
   title: "Case Studies",
   description:
-    "Real-world enterprise deployment logs and proven outcomes from Nexvora Solutions.",
+    "Selected software projects delivered by Nexvora Solutions for startups and growing businesses.",
 };
 
 const caseStudies = [
   {
-    icon: Truck,
-    industry: "Logistics & Field Operations",
-    title: "Field Force Asset Tracking Systems",
-    client: "Global Infrastructure Corp",
+    icon: Layout,
+    industry: "Retail & E-Commerce",
+    title: "Multi-Store Inventory Dashboard",
+    client: "Regional retail chain (confidential)",
     summary:
-      "A unified asset tracking platform deployed across 2,400 field technicians in 18 countries, replacing fragmented spreadsheets and legacy GPS hardware with a real-time mobile-first command system.",
+      "A web-based inventory system for a 12-store retail chain in Dhaka, replacing spreadsheet tracking with real-time stock levels, low-stock alerts, and a manager dashboard.",
     deploymentLog: [
-      "Phase 1 — Discovery & Architecture (8 weeks): Mapped 47 legacy data sources, defined event-sourcing model, and established multi-tenant security boundaries.",
-      "Phase 2 — Core Platform Build (16 weeks): Delivered iOS/Android field apps, admin dashboard, and REST/GraphQL API layer with offline-first sync.",
-      "Phase 3 — Pilot Rollout (6 weeks): Deployed to 200 technicians across 3 regions with parallel run against legacy system for validation.",
-      "Phase 4 — Global Scale (12 weeks): Migrated remaining 2,200 users with zero-downtime cutover and automated data reconciliation.",
+      "Week 1–2 — Discovery: Mapped existing workflow, interviewed store managers, defined MVP scope.",
+      "Week 3–8 — Build: Next.js admin panel, PostgreSQL backend, role-based access for staff vs. managers.",
+      "Week 9–10 — Pilot: Rolled out to 3 stores, gathered feedback, fixed edge cases.",
+      "Week 11–12 — Launch: Deployed to all 12 locations with training sessions and written docs.",
     ],
     metrics: [
-      { label: "Asset visibility improvement", value: "94%" },
-      { label: "Field report submission time", value: "-67%" },
-      { label: "Annual operational savings", value: "$4.2M" },
-      { label: "System uptime post-launch", value: "99.97%" },
-      { label: "Mobile app store rating", value: "4.8/5" },
-      { label: "Data sync latency (p95)", value: "< 800ms" },
+      { label: "Manual stock-update time", value: "-40%" },
+      { label: "Stock-out incidents (monthly)", value: "-28%" },
+      { label: "Manager dashboard adoption", value: "100%" },
+      { label: "Project duration", value: "12 weeks" },
+      { label: "Post-launch critical bugs", value: "2 (fixed in 48h)" },
+      { label: "Client satisfaction", value: "5/5" },
     ],
   },
   {
-    icon: Package,
-    industry: "Supply Chain & Warehousing",
-    title: "Intelligent Warehouse Orchestration Platform",
-    client: "Meridian Retail Group",
+    icon: Smartphone,
+    industry: "FinTech",
+    title: "Customer Account Portal",
+    client: "Payments startup (confidential)",
     summary:
-      "End-to-end warehouse management system integrating RFID scanning, predictive restocking, and carrier API orchestration across 12 fulfillment centers processing 180,000 orders daily.",
+      "A customer-facing web portal for a growing fintech startup, allowing users to view transactions, download statements, and manage profile settings — rebuilt from a slow legacy PHP site.",
     deploymentLog: [
-      "Phase 1 — Process Audit (6 weeks): Shadowed warehouse operations, identified 23 manual bottlenecks, and modeled throughput optimization scenarios.",
-      "Phase 2 — Platform Development (20 weeks): Built WMS core, RFID integration layer, and carrier-agnostic shipping module with real-time inventory ledger.",
-      "Phase 3 — Staged Rollout (10 weeks): Activated 4 pilot warehouses with A/B throughput benchmarking against control sites.",
-      "Phase 4 — Enterprise Expansion (14 weeks): Onboarded remaining 8 centers with unified analytics and executive KPI dashboards.",
+      "Week 1–2 — Audit: Performance profiling of legacy site, identified bottlenecks and UX pain points.",
+      "Week 3–7 — Frontend: Next.js rebuild with responsive design and accessible forms.",
+      "Week 5–8 — Backend: REST API integration with existing payment gateway, secure session handling.",
+      "Week 9 — Launch: Staged rollout with monitoring; zero downtime cutover.",
     ],
     metrics: [
-      { label: "Order processing speed", value: "+41%" },
-      { label: "Inventory accuracy", value: "99.6%" },
-      { label: "Shipping cost reduction", value: "-22%" },
-      { label: "Pick error rate decrease", value: "-78%" },
-      { label: "Dashboard adoption (managers)", value: "100%" },
-      { label: "ROI achieved within", value: "11 months" },
+      { label: "Page load time", value: "-60%" },
+      { label: "Mobile bounce rate", value: "-22%" },
+      { label: "Support tickets (account issues)", value: "-35%" },
+      { label: "Project duration", value: "9 weeks" },
+      { label: "Lighthouse performance score", value: "92" },
+      { label: "Uptime since launch", value: "99.8%" },
     ],
   },
   {
-    icon: MapPin,
-    industry: "Energy & Utilities",
-    title: "Grid Infrastructure Monitoring Suite",
-    client: "Pacific Energy Authority",
+    icon: Code2,
+    industry: "Logistics",
+    title: "Field Reporting Mobile Web App",
+    client: "Logistics SME (confidential)",
     summary:
-      "Real-time monitoring and predictive maintenance platform for 8,500 substations, integrating IoT sensor feeds, geospatial mapping, and automated incident escalation workflows.",
+      "A mobile-friendly web app for field agents to submit daily delivery reports, upload photos, and track route completion — replacing WhatsApp messages and paper forms.",
     deploymentLog: [
-      "Phase 1 — Sensor Integration (10 weeks): Connected 12,000 IoT endpoints via MQTT gateway with edge preprocessing and anomaly detection.",
-      "Phase 2 — Command Center UI (14 weeks): Delivered geospatial dashboard, alert management system, and role-based escalation workflows.",
-      "Phase 3 — Predictive Models (8 weeks): Deployed ML pipeline for transformer failure prediction with 89% accuracy at 72-hour horizon.",
-      "Phase 4 — Regulatory Compliance (6 weeks): Implemented audit trails, NERC CIP alignment, and disaster recovery failover testing.",
+      "Week 1 — Field research: Rode along with 5 agents to understand daily workflow.",
+      "Week 2–6 — Build: Progressive web app with offline support for poor connectivity areas.",
+      "Week 7 — Training: On-site session with 20 field agents, printed quick-start guide.",
+      "Week 8 — Go-live: Full team adoption with daily report exports for management.",
     ],
     metrics: [
-      { label: "Unplanned outage reduction", value: "-35%" },
-      { label: "Mean time to detect faults", value: "-58%" },
-      { label: "Maintenance cost savings", value: "$6.8M/yr" },
-      { label: "Sensor data ingestion rate", value: "2.1M/min" },
-      { label: "Alert false-positive rate", value: "< 2%" },
-      { label: "Compliance audit score", value: "100%" },
+      { label: "Paper forms eliminated", value: "100%" },
+      { label: "Daily reporting time per agent", value: "-3 hrs/wk" },
+      { label: "Report accuracy (management audit)", value: "+45%" },
+      { label: "Project duration", value: "8 weeks" },
+      { label: "Active daily users", value: "20+" },
+      { label: "Data sync success rate", value: "98%" },
     ],
   },
 ];
@@ -96,8 +97,9 @@ export default function CaseStudiesPage() {
                 Case <span className="gradient-text">Studies</span>
               </h1>
               <p className="mt-4 text-lg text-slate-600">
-                Documented deployment logs and verified outcomes from enterprise
-                engagements delivered on time, on budget, and at scale.
+                Real projects with real outcomes. Some client names are withheld
+                by request — we&apos;re happy to share references during a discovery
+                call.
               </p>
             </div>
           </div>
@@ -109,24 +111,25 @@ export default function CaseStudiesPage() {
               const Icon = study.icon;
 
               return (
-                <article key={study.title} className="card overflow-hidden">
+                <article
+                  key={study.title}
+                  className="card overflow-hidden"
+                >
                   <div className="border-b border-slate-100 bg-gradient-to-r from-slate-50 to-indigo-50/30 p-6 sm:p-8">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="flex items-start gap-4">
-                        <div className="icon-badge">
-                          <Icon className="h-6 w-6" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-indigo-600">
-                            {study.industry}
-                          </p>
-                          <h2 className="mt-1 text-2xl font-bold text-slate-900">
-                            {study.title}
-                          </h2>
-                          <p className="mt-1 text-sm text-slate-500">
-                            Client: {study.client}
-                          </p>
-                        </div>
+                    <div className="flex items-start gap-4">
+                      <div className="icon-badge">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-indigo-600">
+                          {study.industry}
+                        </p>
+                        <h2 className="mt-1 text-2xl font-bold text-slate-900">
+                          {study.title}
+                        </h2>
+                        <p className="mt-1 text-sm text-slate-500">
+                          Client: {study.client}
+                        </p>
                       </div>
                     </div>
                     <p className="mt-4 leading-relaxed text-slate-600">
@@ -137,7 +140,7 @@ export default function CaseStudiesPage() {
                   <div className="grid gap-0 lg:grid-cols-2">
                     <div className="border-b border-slate-100 p-6 sm:p-8 lg:border-b-0 lg:border-r">
                       <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">
-                        Deployment Log
+                        Project Timeline
                       </h3>
                       <ol className="space-y-4">
                         {study.deploymentLog.map((entry, index) => (
@@ -155,7 +158,7 @@ export default function CaseStudiesPage() {
 
                     <div className="p-6 sm:p-8">
                       <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-500">
-                        Verified Metrics
+                        Outcomes
                       </h3>
                       <ul className="space-y-3">
                         {study.metrics.map((metric) => (
@@ -181,14 +184,14 @@ export default function CaseStudiesPage() {
 
             <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-center shadow-2xl sm:p-12">
               <h2 className="text-2xl font-bold text-white sm:text-3xl">
-                Your deployment log starts here
+                Want results like these?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-slate-400">
-                Let&apos;s architect a solution with measurable outcomes tailored to your
-                enterprise environment.
+                Tell us about your project. We&apos;ll respond within one business
+                day with an honest assessment and a fixed-scope quote.
               </p>
               <Link href="/contact" className="btn-primary mt-8 px-8 py-3.5 text-base">
-                Start a Project Brief
+                Start a Conversation
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -196,9 +199,7 @@ export default function CaseStudiesPage() {
         </section>
       </main>
 
-        {/* <footer className="border-t border-slate-200 bg-slate-900 py-8 text-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} Nexvora Solutions. All rights reserved.</p>
-        </footer> */}
+      <SiteFooter />
     </div>
   );
 }

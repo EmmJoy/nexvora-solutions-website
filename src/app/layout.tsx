@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Nexvora Solutions",
   },
   description:
-    "Nexvora Solutions delivers enterprise-grade software engineering, premium UI/UX design, and mission-critical digital systems for global organizations.",
+    "Nexvora Solutions is a software engineering agency helping startups and businesses build reliable, scalable digital products. Based in Dhaka, Bangladesh.",
   keywords: [
     "enterprise software",
     "software agency",
