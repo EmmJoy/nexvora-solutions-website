@@ -153,7 +153,7 @@ export default function ContactPage() {
                       {
                         icon: Phone,
                         label: "Phone",
-                        value: "+880 2-555-0199",
+                        value: "+880 1518637097",
                       },
                       {
                         icon: Building2,

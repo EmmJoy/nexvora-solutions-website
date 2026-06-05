@@ -61,7 +61,7 @@ export default function SiteFooter() {
               <li className="flex items-start gap-3 text-sm">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
                 <a href="tel:+88025550199" className="transition-colors hover:text-white">
-                +8801518637097
+                +880 1518637097
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">
