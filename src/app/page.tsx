@@ -68,7 +68,7 @@ const frameworks = [
 const trustSignals = [
   { icon: CheckCircle2, text: "Free discovery call" },
   { icon: Clock, text: "Reply within 1 business day" },
-  { icon: MapPin, text: "Banani, Dhaka · Remote-friendly" },
+  { icon: MapPin, text: "Uttara, Dhaka · Remote-friendly" },
   { icon: Mail, text: "contact@nexvora-solutions.com" },
 ];
 

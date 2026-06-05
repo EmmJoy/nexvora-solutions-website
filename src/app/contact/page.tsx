@@ -159,7 +159,7 @@ export default function ContactPage() {
                         icon: Building2,
                         label: "Office",
                         value:
-                          "House 113, Road 3, Block F, Banani, Dhaka 1213, Bangladesh",
+                          "122 Blue Water Tower, Sector 11 Uttara, Dhaka - 1230, Bangladesh ",
                       },
                     ].map((item) => {
                       const Icon = item.icon;
