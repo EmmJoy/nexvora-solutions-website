@@ -61,15 +61,16 @@ export default function SiteFooter() {
               <li className="flex items-start gap-3 text-sm">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
                 <a href="tel:+88025550199" className="transition-colors hover:text-white">
-                  +880 2-555-0199
+                +8801518637097
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
                 <span>
-                  House 113, Road 3, Block F, Banani,
+                122 Blue Water Tower, Sector 11 
+                Uttara,
                   <br />
-                  Dhaka 1213, Bangladesh
+                  Dhaka 1230, Bangladesh
                 </span>
               </li>
             </ul>
